@@ -5,7 +5,7 @@ from django.contrib.auth.views import login_required
 
 urlpatterns = [
 
-    # listar las carreras de la bd
+    # listar en la bd
     path('listarPorticos', views.listar_porticos, name="listar_porticos"),
     path('listarBicicletas', views.listar_bicicletas, name="listar_bicicletas"),
 
