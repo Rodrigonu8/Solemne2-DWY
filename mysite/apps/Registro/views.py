@@ -186,23 +186,14 @@ class BicicletaDelete(DeleteView):
 # filtros
 
 
-def ListPortico(request):
-    lista = Portico.objects.all()
-    ubicacion = request.GET.get('ubicacion')
-    id_portico = request.GET.get('id-portico')
+def ListBicicleta(request):
+    lista = Bicicleta.objects.all()
+    id_bicicleta = request.GET.get('id-bicicleta')
 
-    # if 'btn-buscarIdPorticos' in request.GET:
-    #     if cant_semestres:
-    #         lista = Portico.objects.filter(semestres__gte=cant_semestres)
-    if 'btn-id-portico' in request.GET:
-        if id_portico:
-            lista = Portico.objects.filter(id_portico__icontains=id_portico)
-
-    elif 'btn-ubicacion' in request.GET:
-        if ubicacion:
-            lista = Portico.objects.filter(ubicacion__icontains=ubicacion)
-
+    if 'btn-id-bicicleta' in request.GET:
+        if id_bicicleta:
+            lista = Bicicleta.objects.filter(id_bicicleta__icontains=id_bicicleta)
     data = {
         'object_list': lista
     }
-    return render(request, 'Registro/listar_porticos_filtros.html', data)
+    return render(request, 'Registro/listar_bicicleta_filtros.html', data)

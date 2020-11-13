@@ -47,5 +47,5 @@ urlpatterns = [
 
     path('del_bicicleta/<int:pk>', views.BicicletaDelete.as_view(), name='del_bicicleta'),
     # listar con filtros
-    path('listar_porticos', views.ListPortico , name="list_portico"), 
+    path('listar_bicicleta', views.ListBicicleta , name="list_bicicleta"), 
 ]

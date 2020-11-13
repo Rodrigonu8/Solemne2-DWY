@@ -38,10 +38,10 @@
                 {% if user.is_authenticated %}
                 {% if user.is_superuser %}
                 <div class="btnid">
-                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'list_portico' %}">Pórticos</a>
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'listar_porticos' %}">Pórticos</a>
                 </div>
                 <div class="btnid">
-                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'list_bicicleta' %}">Bicicletas</a>
                 </div>
                 <div class="btnid">
                     <a type="button" class="btn btn-primary btn-lg" href="{% url 'ejecutivo_list' %}">Ejecutivo</a>
