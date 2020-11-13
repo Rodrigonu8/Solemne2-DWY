@@ -167,6 +167,10 @@ body {
 .btnid a {
     background-color: #F07800;
     border-color: #F07800;
+
+}
+.container-botones{
+    justify-content:space-evenly;
 }
 
 .bienvenido {
@@ -179,15 +183,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-#footer {
-    background-color: rgb(238, 236, 234);
-    padding: 1% 1% 1% 1%;
-    margin-top: 2%;
-}
-
-#footer p {
-    margin-top: 3%;
-}
 
 .slider {
     width: 95%;
@@ -230,4 +225,14 @@ body {
     70% {
         margin-left: -200%;
     }
+}
+
+.texto{
+    text-align: center;
+}
+.nombre{
+    text-align: center;
+}
+.foot{
+    background-color: #F07800;
 }

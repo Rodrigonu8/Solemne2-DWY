@@ -22,34 +22,43 @@
 
             <div class="inicio">
                 <br>
+                <h1>Página principal</h1>
                 <br>
             </div>
             {% block content %} {% endblock content %}
-            {% if not user.is_authenticated %}
-            <div class="btnid">
-                <a type="button" class="btn btn-primary btn-lg" href="{% url 'registrar_usuario' %}">Registrar</a>
-                <br>
-                <a type="button" class="btn btn-primary btn-lg" href="{% url 'login' %}">Iniciar sesión</a>
-            </div>
-            {% endif %}
+            <div class="flex-container" id="container-botones">
+                {% if not user.is_authenticated %}
+                <div class="btnid">
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'registrar_usuario' %}">Registrar</a>
+                    <br>
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'login' %}">Iniciar sesión</a>
+                </div>
+                {% endif %}
 
-            {% if user.is_authenticated %}
-            {% if user.is_superuser %}
-            <div class="btnid">
-                <a type="button" class="btn btn-primary btn-lg" href="{% url 'list_portico' %}">Pórticos</a>
+                {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                <div class="btnid">
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'list_portico' %}">Pórticos</a>
+                </div>
+                <div class="btnid">
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
+                </div>
+                <div class="btnid">
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'ejecutivo_list' %}">Ejecutivo</a>
+                </div>
+                {% endif %}
+                <div class="btnid">
+                    <a type="button" class="btn btn-primary btn-lg" href="{% url 'logout' %}">Cerrar sesión</a>
+                </div>
+                {% endif %}
+                {% endblock %}
             </div>
-            <div class="btnid">
-                <a type="button" class="btn btn-primary btn-lg" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
+            <br>
+            <br>
+            <div class="flex-container" id="texto">
+                <h3>Usa MoBike para el desplazamiento en la comuna de La Reina, Busca los aparcamientos y activa tu
+                    servicio ecológico!</h3>
             </div>
-            <div class="btnid">
-                <a type="button" class="btn btn-primary btn-lg" href="{% url 'ejecutivo_list' %}">Ejecutivo</a>
-            </div>
-            {% endif %}
-            <div class="btnid">
-                <a type="button" class="btn btn-primary btn-lg" href="{% url 'logout' %}">Cerrar sesión</a>
-            </div>
-            {% endif %}
-            {% endblock %}
 
 
             <!-- carrusel -->
@@ -80,6 +89,34 @@
                     </div>
                 </div>
             </div>
+            <!-- Footer -->
+            <footer class="page-footer font-small pt-4" id="foot">
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left">
+                </div>
+
+                <hr>
+
+                <!-- Call to action -->
+                <ul class="list-unstyled list-inline text-center py-2">
+                    <li class="list-inline-item">
+                        <h5 class="mb-1">Registrate!</h5>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="btn btn-danger btn-rounded">Ingresa aquí!</a>
+                    </li>
+                </ul>
+                <!-- Call to action -->
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3">© 2020 MoBike:
+                    <a href="{% url 'home' %}"> MoBike.cl</a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
         </div>
     </div>
     </div>
